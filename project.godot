@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Signalbreak"
+run/main_scene="uid://5yl7rfvsyb2l"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

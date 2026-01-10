@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://5yl7rfvsyb2l"]
+[gd_scene load_steps=2 format=3 uid="uid://5yl7rfvsyb2l"]
+
+[ext_resource type="PackedScene" uid="uid://cj2fp15372w2y" path="res://scenes/Terminal.tscn" id="2_lnu2h"]
 
 [node name="Game" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Terminal" parent="CanvasLayer" instance=ExtResource("2_lnu2h")]
+scroll_offset = Vector2(0, -644)

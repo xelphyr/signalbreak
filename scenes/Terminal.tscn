@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://cj2fp15372w2y"]
+[gd_scene load_steps=3 format=3 uid="uid://cj2fp15372w2y"]
+
+[ext_resource type="Script" uid="uid://bl5hegm7pir5t" path="res://scripts/classes/terminal.gd" id="1_enqfd"]
+[ext_resource type="Script" uid="uid://c67gtaewiiw2g" path="res://scripts/classes/test_module.gd" id="2_i12f4"]
 
 [node name="Terminal" type="GraphEdit"]
+offset_left = 1.0
+offset_right = 1144.0
+offset_bottom = 644.0
+scroll_offset = Vector2(-529, 0)
+type_names = {
+0: "Default"
+}
+connections = Array[Dictionary]([{
+"from_node": &"",
+"from_port": 0,
+"keep_alive": true,
+"to_node": &"",
+"to_port": 0
+}])
+script = ExtResource("1_enqfd")
+
+[node name="Module1" type="GraphNode" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 138.0
+offset_right = 354.0
+offset_bottom = 220.0
+mouse_filter = 1
+position_offset = Vector2(-434, 138)
+script = ExtResource("2_i12f4")
+metadata/_custom_type_script = "uid://c67gtaewiiw2g"
+
+[node name="Module2" type="GraphNode" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 225.0
+offset_right = 795.0
+offset_bottom = 307.0
+mouse_filter = 1
+position_offset = Vector2(7, 225)
+script = ExtResource("2_i12f4")
+metadata/_custom_type_script = "uid://c67gtaewiiw2g"
+
+[connection signal="connection_request" from="." to="." method="_on_connection_request"]

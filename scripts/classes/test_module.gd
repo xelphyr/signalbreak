@@ -1,11 +1,12 @@
 extends Module
+class_name TestModule
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	var port : Control = Control.new()
+	port.custom_minimum_size.y = 20
+	call_deferred("add_child", port)
+	call_deferred("_after_adding_port")
+	
+func _after_adding_port() -> void:
+	set_slot(0, true, 0, Color.WHITE ,true, 0, Color.WHITE)
+	
