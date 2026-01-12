@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://cogdfdd8x05p7" path="res://themes/Terminal.tres" id="1_y2lda"]
 [ext_resource type="Script" uid="uid://c67gtaewiiw2g" path="res://scripts/classes/test_module.gd" id="2_i12f4"]
 
-[node name="Terminal" type="GraphEdit"]
+[node name="Terminal" type="GraphEdit" groups=["Terminal"]]
 offset_left = 168.0
 offset_top = 103.0
 offset_right = 1012.0

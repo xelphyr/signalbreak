@@ -1,16 +1,15 @@
 extends Module
-class_name TestModule
+class_name SawGenerator
+
 
 func _commit() -> void:
-	terminal
 	pass
 
 func _inlet() -> void:
 	pass
 
-func _core() -> void:
+func _core() -> void :
 	pass
 
 func _outlet() -> void:
 	pass
-	
