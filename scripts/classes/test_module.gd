@@ -2,15 +2,16 @@ extends Module
 class_name TestModule
 
 func _commit() -> void:
-	terminal
-	pass
+	print("Commit")
 
 func _inlet() -> void:
-	pass
+	print("Inlet")
 
 func _core() -> void:
-	pass
+	print("Core")
 
 func _outlet() -> void:
-	pass
+	print("Outlet")
 	
+func receive_data(_data) -> void:
+	pass

@@ -24,12 +24,16 @@ show_grid_buttons = false
 show_minimap_button = false
 show_arrange_button = false
 script = ExtResource("1_enqfd")
+frequency = 1.0
 
 [node name="Module1" type="GraphNode" parent="."]
 layout_mode = 0
-offset_right = 278.00067
-offset_bottom = 119.0
+offset_left = 262.0
+offset_top = 141.0
+offset_right = 540.0007
+offset_bottom = 260.0
 mouse_filter = 1
+position_offset = Vector2(262, 141)
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color(1, 1, 1, 1)

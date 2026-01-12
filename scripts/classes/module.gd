@@ -37,11 +37,21 @@ func _core() -> void
 ## Step 3/3 of [method _tick]. Packages and ships outputs through the output ports, if they exist.
 @abstract
 func _outlet() -> void
+
+#endregion
+
+#region Other processes
+##Receives data from [method _outlet] of the module the in-port is connected to.
+@abstract
+func receive_data(data) -> void
+
 #endregion
 
 #region General Module Processes
 func _ready() -> void:
 	terminal = get_tree().get_first_node_in_group(&"Terminal")
+	terminal.tick.connect(_tick)
+	terminal.post_tick.connect(_commit)
 
 func _process(_delta : float) -> void:
 	#Clamps the movement of the modules to within the bounds of the terminal
