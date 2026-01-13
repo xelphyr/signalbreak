@@ -66,6 +66,7 @@ func _ready() -> void:
 func _process(_delta : float) -> void:
 	if _first_next_frame:
 		get_titlebar_hbox().visible = false
+		_first_next_frame = false
 	#Clamps the movement of the modules to within the bounds of the terminal
 	position_offset.x = clampf(position_offset.x, 0.0, $"..".size.x - size.x) 
 	position_offset.y = clampf(position_offset.y, 0.0, $"..".size.y - size.y) 

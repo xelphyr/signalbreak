@@ -32,9 +32,13 @@ func _on_connection_request(from_node: StringName, from_port: int, to_node: Stri
 
 #region Functions
 func request_data_transfer(from_node: StringName, from_port: int, data):
-	var output = get_node(get_connection_list_from_node(from_node)\
-	.filter(func(connection): return connection["from_port"] == from_port)\
-	[0])
+	var output = get_connection_list_from_node(from_node)\
+	.filter(func(connection): return connection["from_port"] == from_port)
+	
+	if output.size() == 0:
+		return
+	
+	output = get_node(output[0])
 	
 	output.receive_data(data)
 #endregion
