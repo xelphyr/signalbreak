@@ -12,12 +12,16 @@ config_version=5
 
 config/name="Signalbreak"
 run/main_scene="uid://5yl7rfvsyb2l"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 EventBus="*res://scripts/event_bus.gd"
+
+[dotnet]
+
+project/assembly_name="Signalbreak"
 
 [editor_plugins]
 

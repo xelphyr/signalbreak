@@ -1,10 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://5yl7rfvsyb2l"]
+[gd_scene load_steps=4 format=3 uid="uid://5yl7rfvsyb2l"]
 
 [ext_resource type="PackedScene" uid="uid://cj2fp15372w2y" path="res://scenes/Terminal.tscn" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://bdjifioqsnv5r" path="res://scripts/AudioManager.cs" id="2_yqjtg"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_yqjtg"]
 
 [node name="Game" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Terminal" parent="CanvasLayer" instance=ExtResource("2_lnu2h")]
-scroll_offset = Vector2(0, -644)
+scroll_offset = Vector2(0, -440)
+
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("Player")]
+script = ExtResource("2_yqjtg")
+Player = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
+stream = SubResource("AudioStreamGenerator_yqjtg")
