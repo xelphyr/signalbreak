@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cj2fp15372w2y"]
+[gd_scene load_steps=6 format=3 uid="uid://cj2fp15372w2y"]
 
 [ext_resource type="Script" uid="uid://bl5hegm7pir5t" path="res://scripts/classes/terminal.gd" id="1_enqfd"]
 [ext_resource type="Theme" uid="uid://cogdfdd8x05p7" path="res://themes/Terminal.tres" id="1_y2lda"]
 [ext_resource type="Script" uid="uid://c67gtaewiiw2g" path="res://scripts/classes/test_module.gd" id="2_i12f4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2lda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8xblc"]
 
 [node name="Terminal" type="GraphEdit" groups=["Terminal"]]
 offset_left = 168.0
@@ -28,12 +32,14 @@ frequency = 1.0
 
 [node name="Module1" type="GraphNode" parent="."]
 layout_mode = 0
-offset_left = 262.0
-offset_top = 141.0
-offset_right = 540.0007
-offset_bottom = 260.0
+offset_left = 210.0
+offset_top = 159.0
+offset_right = 488.00067
+offset_bottom = 278.0
 mouse_filter = 1
-position_offset = Vector2(262, 141)
+theme_override_styles/titlebar = SubResource("StyleBoxEmpty_y2lda")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxEmpty_8xblc")
+position_offset = Vector2(210, 159)
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color(1, 1, 1, 1)
@@ -67,13 +73,16 @@ metadata/_custom_type_script = "uid://c67gtaewiiw2g"
 [node name="Control" type="Control" parent="Module1"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Control2" type="Control" parent="Module1"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Control3" type="Control" parent="Module1"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+mouse_filter = 1
 
 [connection signal="connection_request" from="." to="." method="_on_connection_request"]

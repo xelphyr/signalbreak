@@ -6,6 +6,8 @@ class_name Module
 ## The Terminal to which this module is connected. [br]
 ## [b][color=yellow]Warning:[/color][/b] value is only initialized after [method _ready].
 var terminal : Terminal
+## 
+var _first_next_frame : bool = true
 #endregion
 
 #region Terminal-called processes
@@ -52,8 +54,18 @@ func _ready() -> void:
 	terminal = get_tree().get_first_node_in_group(&"Terminal")
 	terminal.tick.connect(_tick)
 	terminal.post_tick.connect(_commit)
+	
+	# Deleting the title
+	var titlebar := get_titlebar_hbox()
+	
+	for child in titlebar.get_children():
+		child.queue_free()
+	titlebar.custom_minimum_size = Vector2.ZERO
+	titlebar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 
 func _process(_delta : float) -> void:
+	if _first_next_frame:
+		get_titlebar_hbox().visible = false
 	#Clamps the movement of the modules to within the bounds of the terminal
 	position_offset.x = clampf(position_offset.x, 0.0, $"..".size.x - size.x) 
 	position_offset.y = clampf(position_offset.y, 0.0, $"..".size.y - size.y) 

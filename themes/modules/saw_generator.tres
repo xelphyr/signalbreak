@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ly24tmtkrgxx"]
+
+[ext_resource type="Texture2D" uid="uid://rneg5ss18o5a" path="res://icon.svg" id="1_dh3wv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ddlhf"]
+texture = ExtResource("1_dh3wv")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vj871"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gi723"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvy0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7pmga"]
+
+[resource]
+GraphNode/styles/panel = SubResource("StyleBoxTexture_ddlhf")
+GraphNode/styles/panel_focus = SubResource("StyleBoxEmpty_vj871")
+GraphNode/styles/panel_selected = SubResource("StyleBoxEmpty_gi723")
+GraphNode/styles/titlebar = SubResource("StyleBoxEmpty_gvy0x")
+GraphNode/styles/titlebar_selected = SubResource("StyleBoxEmpty_7pmga")
